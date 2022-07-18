@@ -13,8 +13,12 @@
     <div class="mb-5 text-center ">
        
         <img  src="/img/menu.png" alt="Card image cap">
-
     </div>
+
+    <div>
+        <a class="btn btn-primary" href="@Url.Action("Create","Pizza")">Inserisci nuova pizza</a>
+    </div>
+    <hr />
 
     
 
@@ -29,7 +33,6 @@
                     <h5 class="card-title">@pizza.Name</h5>
                     <p class="card-text">@pizza.Description</p>
                      <p class="card-text">Prezzo: @pizza.Price €</p>
-                    <a href="#" class="btn btn-success">Aggiungi</a>
                     <a href="@Url.Action("Details","Pizza", new {id=pizza.PizzaId})" class="btn btn-info">Dettagli</a>
                     <a href="#" class="btn btn-danger">Rimuovi</a>
                   </div>

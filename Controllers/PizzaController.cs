@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace la_mia_pizzeria_static.Controllers
 {
@@ -37,6 +38,24 @@ namespace la_mia_pizzeria_static.Controllers
                     return View("Details", pizzaFound);
                 }
             }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Pizza pizza)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Create", pizza);
+            }
+
+            using(PizzaContext context = new PizzaContext())
+            {
+                context.Pizzas.Add(pizza);
+                context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+           
         }
 
 

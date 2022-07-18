@@ -10,12 +10,9 @@ public class Pizza
         public string Description { get; set; }
         public string Img { get; set; }
         public double Price { get; set; }
-        //public Pizza(string Name, string Img, string Description, double price)
-        //{
-        //    this.Name = Name;
-        //    this.Img = Img;
-        //    this.Description = Description;
-        //    Price = price;
-        //}
+    public Pizza()
+    {
+
     }
+}
 
