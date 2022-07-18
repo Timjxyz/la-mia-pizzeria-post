@@ -10,9 +10,9 @@
 
 <link rel="stylesheet" href="~/css/pizzaIndex.css" asp-append-version="true" />
 
-<div class="container">
+<div class="container w-50">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-12">
 
             <h1>Inserisci una nuova pizza</h1>
 
@@ -21,46 +21,34 @@
                 @Html.AntiForgeryToken()
                 
                 <div class="form-group">
-                    <strong>Nome pizza: </strong>
-                    <input asp-for="Name" class="d-block w-100" />
+                    <label asp-for="Name" class="control-label text-white"></label>
+                    <input asp-for="Name" placeholder="es. Margherita" class="form-control" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
 
-            </form>
-           
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label text-white"></label>
+                    <input asp-for="Description"placeholder="es. Pomodoro, Mozzarella" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
 
+                 <div class="form-group">
+                    <label asp-for="Img" class="control-label text-white"></label>
+                    <input asp-for="Img" placeholder="es. /img/pizza-margherita.jpg" class="form-control" />
+                    <span asp-validation-for="Img" class="text-danger"></span>
+                </div>
+
+                 <div class="form-group">
+                    <label asp-for="Price" class="control-label text-white"></label>
+                    <input asp-for="Price" placeholder="es. 10" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <input type="submit"  class="btn px-4 btn-success mt-4" value="Save"/>
+                </div>
+
+            </form>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*@{
-    List<Pizza> pizzas = new List<Pizza>();
-    pizzas.Add(new Pizza("Bufalina", "/img/pizza-buffala-prosciutto.jpg", "Pomodoro, Mozzarella di Bufala Campana DOP, Prosciutto Crudo di San Daniele",10));
-    pizzas.Add(new Pizza("Triveneto", "/img/pizza-con-pancetta.jpg", "Pomodoro, Mozzarella, Pancetta, Radicchio di Treviso",9.50));
-    pizzas.Add(new Pizza("Diavola", "/img/pizza-Diavola.jpg", "Pomodoro, Mozzarella, Salamino Piccante",8.50));
-    pizzas.Add(new Pizza("Estate", "/img/pizza-estate.jpg", "Pomodoro, Mozzarella, Ruccola, Pomodorini, Grana",12));
-    pizzas.Add(new Pizza("Mortadella, Pistacchio, Stracciatella", "/img/pizza-mortadella.jpg", "Pomodoro, Mozzarella, Mortadella, Pistacchio di Bronte, Stracciatella",14));
-    pizzas.Add(new Pizza("Tonno e Cipolla", "/img/pizza-tonno-cipolla.jpg", "Pomodoro, Mozzarella, Tonno, Cipolla",7));
-    
-}*@

@@ -40,6 +40,16 @@ namespace la_mia_pizzeria_static.Controllers
             }
         }
 
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+
+            return View();
+        }
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Pizza pizza)

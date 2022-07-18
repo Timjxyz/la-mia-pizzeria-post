@@ -29,6 +29,8 @@ app.MapControllerRoute(
 
 app.Run();
 
+return;
+
 using (PizzaContext db = new PizzaContext())
 {
     //1
